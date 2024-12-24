@@ -1,5 +1,5 @@
 import express from 'express';
-import geoip from '../var/task/node_modules/geoip-lite/data';
+import geoip from '../node_modules/geoip-lite/data';
 
 
 const router = express.Router();  
