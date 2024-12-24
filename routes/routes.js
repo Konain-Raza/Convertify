@@ -14,7 +14,7 @@ router.get("/getip", (req, res) => {
     if (ip === "::1" || ip === "127.0.0.1") {
         ip = "8.8.8.8"; // Use a public IP for local testing
     }
-    const geo = geoip.lookup("175.107.222.108");
+    const geo = geoip.lookup(ip);
     if (geo) {
         res.json({
             ip: ip,
