@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@maxmind/geoip2-node": "^5.0.0",
     "cors": "^2.8.5",
     "currency-converter-lt": "^2.0.1",
     "express": "^4.21.2",

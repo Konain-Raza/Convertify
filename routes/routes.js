@@ -1,24 +1,18 @@
 import express from 'express';
 import geoip from 'geoip-lite';
-import path from 'path';
 
-// Set path to geoip data directory
-const geoDataPath = path.join(__dirname, 'geoip-data');
-geoip._init(geoDataPath);
-
-const geoapi = geoip;
-const router = express.Router();
+const router = express.Router();  
 
 import { converter } from '../controllers/controllers.js';
 
-router.post("/", converter);
+router.post("/", converter); 
 
 router.get("/getip", (req, res) => {
     let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
     if (ip === "::1" || ip === "127.0.0.1") {
         ip = "8.8.8.8"; // Use a public IP for local testing
     }
-    const geo = geoapi.lookup("175.107.222.108");
+    const geo = geoip.lookup("175.107.222.108");
     if (geo) {
         res.json({
             ip: ip,
