@@ -1,18 +1,16 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "index.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "index.js"
-        }
-    ],
-     "files": [
-    "node_modules/geoip-lite/data/geoip-country.dat"
-  ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "ignore": ["**/*.md", "node_modules/geoip-lite/data/geoip-country.dat"]
 }
