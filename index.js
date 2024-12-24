@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import geoip from "geoip-lite";
 import router from "./routes/routes.js";
 
 const app = express();
