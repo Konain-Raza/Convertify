@@ -1,12 +1,17 @@
 import express from 'express';
 import geoip from 'geoip-lite';
-const geoapi = geoip;
+import path from 'path';
 
-const router = express.Router();  
+// Set path to geoip data directory
+const geoDataPath = path.join(__dirname, 'geoip-data');
+geoip._init(geoDataPath);
+
+const geoapi = geoip;
+const router = express.Router();
 
 import { converter } from '../controllers/controllers.js';
 
-router.post("/", converter); 
+router.post("/", converter);
 
 router.get("/getip", (req, res) => {
     let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
