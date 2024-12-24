@@ -1,5 +1,6 @@
 import express from 'express';
 import geoip from 'geoip-lite';
+const geoapi = geoip;
 
 const router = express.Router();  
 
@@ -12,7 +13,7 @@ router.get("/getip", (req, res) => {
     if (ip === "::1" || ip === "127.0.0.1") {
         ip = "8.8.8.8"; // Use a public IP for local testing
     }
-    const geo = geoip.lookup(ip);
+    const geo = geoapi.lookup("175.107.222.108");
     if (geo) {
         res.json({
             ip: ip,
