@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import geoip from "geoip-lite";
+// import geoip from "geoip-lite";
 import router from "./routes/routes.js";
 
 const app = express();
@@ -32,23 +32,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/getip", (req, res) => {
-  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || req.headers["x-real-ip"] || "127.0.0.1";
-  console.log("Detected IP:", ip);
-  const ipForGeo = ip === "::1" || ip === "127.0.0.1" ? "8.8.8.8" : ip;
-  console.log(ipForGeo);
-  res.json({
-    ip: ipForGeo
-  })
-  // const geo = geoip.lookup(ipForGeo);
 
-  // if (geo) {
-  //   console.log("GeoIP Lookup Result:", geo);
-  //   res.status(200).json({ ip: ipForGeo, countryCode: geo.country });
-  // } else {
-  //   res.status(404).json({ error: "Unable to determine country code" });
-  // }
-});
 
 const startServer = () => {
   try {
