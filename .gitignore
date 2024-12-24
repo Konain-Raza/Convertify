@@ -1,5 +1,4 @@
 # Ignore all node_modules
-node_modules/
 
 # Don't ignore geoip-lite data folder
-node_modules/geoip-lite/data/
+node_modules/geoip-lite
