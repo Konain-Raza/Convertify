@@ -15,7 +15,7 @@
     "cors": "^2.8.5",
     "currency-converter-lt": "^2.0.1",
     "express": "^4.21.2",
-    "geoip-lite": "1.4.9",
+    "geoip-lite": "1.4.0",
     "nodemon": "^3.1.9"
   }
 }
