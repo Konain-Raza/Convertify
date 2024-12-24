@@ -11,5 +11,8 @@
             "src": "/(.*)",
             "dest": "index.js"
         }
-    ]
+    ],
+     "files": [
+    "node_modules/geoip-lite/data/geoip-country.dat"
+  ]
 }
