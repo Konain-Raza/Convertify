@@ -9,11 +9,7 @@ import { converter } from '../controllers/controllers.js';
 router.post("/", converter); 
 
 router.get("/getip", (req, res) => {
-    console.log(req)
-    
-    res.json({
-        request: JSON.stringify(req)
-    })
+
     let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
     if (ip === "::1" || ip === "127.0.0.1") {
         ip = "8.8.8.8"; // Use a public IP for local testing
