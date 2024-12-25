@@ -1,3 +1,4 @@
+node_modules/
 # Ignore all node_modules
 
 # Don't ignore geoip-lite data 
