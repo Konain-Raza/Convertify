@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "country-to-currency": "^2.0.2",
+    "currency-codes": "^2.2.0",
     "currency-converter-lt": "^2.0.1",
     "express": "^4.21.2",
     "geoip-lite": "1.4.0",
