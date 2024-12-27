@@ -4,7 +4,7 @@ import countryToCurrency from "country-to-currency";
 
 const currencyConverter = new CurrencyConverter();
 
-const converter = async (req, res) => {
+const convertCurrency = async (req, res) => {
   const { from, to, amount } = req.body;
 
   if (!from) {
@@ -28,7 +28,7 @@ const converter = async (req, res) => {
   }
 };
 
-const getIP = async (req, res) => {
+const getLocation = async (req, res) => {
   try {
     let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
@@ -39,7 +39,7 @@ const getIP = async (req, res) => {
     const geo = geoip.lookup(ip);
 
     if (geo) {
-      const countryCode = geo.country;
+      const countryCode = "IT";
       const currencyCode = countryToCurrency[countryCode] || "Unknown";
 
       res.status(200).json({
@@ -55,4 +55,4 @@ const getIP = async (req, res) => {
   }
 };
 
-export { converter, getIP };
+export { convertCurrency, getLocation };

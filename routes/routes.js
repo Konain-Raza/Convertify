@@ -2,10 +2,10 @@ import express from "express";
 
 const router = express.Router();
 
-import { converter, getIP } from "../controllers/controllers.js";
+import { convertCurrency, getLocation } from "../controllers/controllers.js";
 
-router.post("/", converter);
+router.post("/exchange", convertCurrency);
 
-router.get("/getip", getIP);
+router.get("/location", getLocation);
 
 export default router;
