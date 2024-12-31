@@ -1,7 +1,4 @@
 import CurrencyConverter from "currency-converter-lt";
-import geoip from "geoip-lite";
-import countryToCurrency from "country-to-currency";
-
 const currencyConverter = new CurrencyConverter();
 
 const convertCurrency = async (req, res) => {
@@ -24,35 +21,8 @@ const convertCurrency = async (req, res) => {
 
     res.status(200).send({ [to]: response });
   } catch (error) {
-    res.status(500).send({ error: "Internal Server Error: " + error.message });
+    res.status(500).send({ error: "Error: " + error.message });
   }
 };
 
-const getLocation = async (req, res) => {
-  try {
-    let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-
-    if (ip === "::1" || ip === "127.0.0.1") {
-      ip = "8.8.8.8";
-    }
-
-    const geo = geoip.lookup(ip);
-
-    if (geo) {
-      const countryCode = "IT";
-      const currencyCode = countryToCurrency[countryCode] || "Unknown";
-
-      res.status(200).json({
-        ip: ip,
-        countryCode: countryCode,
-        currencyCode: currencyCode,
-      });
-    } else {
-      res.status(404).json({ error: "Unable to determine country code" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: "Internal Server Error: " + error.message });
-  }
-};
-
-export { convertCurrency, getLocation };
+export { convertCurrency };

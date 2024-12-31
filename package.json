@@ -12,14 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "country-to-currency": "^2.0.2",
-    "currency-codes": "^2.2.0",
     "currency-converter-lt": "^2.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "geoip-lite": "1.4.0",
     "nodemon": "^3.1.9"
   }
 }
