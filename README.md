@@ -61,7 +61,7 @@ Got questions? Or just want to say hello? Drop us an email at:
 
 ## 🔗 **Test the API**
 
-Want to test the API right away? 🎯 You can use this [Postman Collection](https://api.postman.com/collections/37681364-bcdf5d8e-28eb-461e-a0fe-49d737b573d3) to make requests and see the magic in action! ✨🚀
+Want to test the API right away? 🎯 You can use this [Postman Collection](https://api.postman.com) to make requests and see the magic in action! ✨🚀
 
 
 ## 💖 **Made with Love by Konain Raza**
