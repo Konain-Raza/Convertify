@@ -19,7 +19,7 @@ const convertCurrency = async (req, res) => {
       .amount(amount || 1)
       .convert();
 
-    res.status(200).send({ [to]: response });
+    res.status(200).send({ rates: `${response} ${to}` });
   } catch (error) {
     res.status(500).send({ error: "Error: " + error.message });
   }
