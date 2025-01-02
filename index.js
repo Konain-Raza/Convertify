@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
     <h4>Response 💰</h4>
     <pre>
 {
-  "EUR": 966.28   // The converted amount in the target currency (e.g., EUR)
+  rates: 966.28 EUR   // The converted amount in the target currency (e.g., EUR)
 }
     </pre>
 
