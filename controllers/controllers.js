@@ -1,28 +1,14 @@
-import CurrencyConverter from "currency-converter-lt";
-const currencyConverter = new CurrencyConverter();
+import { convert } from "exchangenow";
 
-const convertCurrency = async (req, res) => {
-  const { from, to, amount } = req.body;
-
-  if (!from) {
-    return res.status(400).send({ error: '"from" parameter is required' });
-  }
-
-  if (!to) {
-    return res.status(400).send({ error: '"to" parameter is required' });
-  }
-
+const convertRate = async (req, res) => {
+  const { from, to, amount = 1 } = req.body;
   try {
-    const response = await currencyConverter
-      .from(from)
-      .to(to)
-      .amount(amount || 1)
-      .convert();
-
-    res.status(200).send({ rates: `${response} ${to}` });
+    const response = await convert(from, to, amount);
+    res.json(response);
   } catch (error) {
-    res.status(500).send({ error: "Error: " + error.message });
+    console.error('Error:', error.message);
+    return res.status(400).json({ error: error.message });
   }
 };
 
-export { convertCurrency };
+export { convertRate };

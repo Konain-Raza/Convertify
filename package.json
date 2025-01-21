@@ -1,7 +1,7 @@
 {
   "name": "convertify",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to **Convertfy** – where currency conversion becomes as easy as waving a magic wand! ✨   Let us take your hard-earned money and **convert it** into something **magical**! 💰",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,10 +12,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
     "cors": "^2.8.5",
-    "currency-converter-lt": "^2.0.1",
-    "dotenv": "^16.4.7",
+    "exchangenow": "1.0.1",
     "express": "^4.21.2",
     "nodemon": "^3.1.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konain-Raza/Convertify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Konain-Raza/Convertify/issues"
+  },
+  "homepage": "https://github.com/Konain-Raza/Convertify#readme"
 }
